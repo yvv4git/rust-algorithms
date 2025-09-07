@@ -1,0 +1,18 @@
+[package]
+name = "algo"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "recursion"
+path = "src/recursion/recursion.rs"
+
+[[bin]]
+name = "TowerOfHanoi"
+path = "src/recursion/tower_of_hanoi.rs"
+
+[[bin]]
+name = "mergesort"
+path = "src/recursion/mergesort.rs"
+
+[dependencies]
