@@ -15,4 +15,8 @@ path = "src/recursion/tower_of_hanoi.rs"
 name = "mergesort"
 path = "src/recursion/mergesort.rs"
 
+[[bin]]
+name = "binary_search"
+path = "src/divide_and_conquer/binary_search.rs"
+
 [dependencies]
