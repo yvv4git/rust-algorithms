@@ -31,5 +31,9 @@ path = "src/two_pointers/two_sum.rs"
 name = "two_pointers_two_sum_v2"
 path = "src/two_pointers/two_sum_v2.rs"
 
+[[bin]]
+name = "binary_search_two_sum"
+path = "src/binary_search/two_sum.rs"
+
 
 [dependencies]
