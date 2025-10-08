@@ -19,4 +19,17 @@ path = "src/recursion/mergesort.rs"
 name = "binary_search"
 path = "src/divide_and_conquer/binary_search.rs"
 
+[[bin]]
+name = "hash_map_two_sum"
+path = "src/hash_map/two_sum.rs"
+
+[[bin]]
+name = "two_pointers_two_sum"
+path = "src/two_pointers/two_sum.rs"
+
+[[bin]]
+name = "two_pointers_two_sum_v2"
+path = "src/two_pointers/two_sum_v2.rs"
+
+
 [dependencies]
