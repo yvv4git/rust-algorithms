@@ -35,5 +35,13 @@ path = "src/two_pointers/two_sum_v2.rs"
 name = "binary_search_two_sum"
 path = "src/binary_search/two_sum.rs"
 
+[[bin]]
+name = "combinatorics_two_sum_counting"
+path = "src/combinatorics/two_sum_counting.rs"
+
+[[bin]]
+name = "greedy_maximize_avto_number"
+path = "src/greedy/maximize_avto_number.rs"
+
 
 [dependencies]
