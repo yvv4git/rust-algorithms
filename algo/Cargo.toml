@@ -45,3 +45,4 @@ path = "src/greedy/maximize_avto_number.rs"
 
 
 [dependencies]
+ordered-float = "4.2"
