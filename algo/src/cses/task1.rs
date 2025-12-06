@@ -1,4 +1,4 @@
-use std::io::{self, BufRead};
+use std::io;
 
 #[allow(dead_code)]
 fn weird_algorithm(n: u64) -> Vec<u64> {
@@ -37,7 +37,7 @@ fn main() {
 
 #[allow(dead_code)]
 #[test]
-fn test_task1_Weird_Algorithm() {
+fn test_task1_weird_algorithm() {
     assert_eq!(weird_algorithm(3), vec![3, 10, 5, 16, 8, 4, 2, 1]);
     assert_eq!(weird_algorithm(1), vec![1]);
     assert_eq!(weird_algorithm(2), vec![2, 1]);

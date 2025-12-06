@@ -2,10 +2,12 @@
 #[allow(unused_mut)]
 use std::io::{self, Read};
 
+#[allow(dead_code)]
 struct Scanner {
     buf: Vec<u8>,
     idx: usize,
 }
+#[allow(dead_code)]
 impl Scanner {
     fn new() -> Self {
         let mut s = String::new();
@@ -25,11 +27,13 @@ impl Scanner {
     fn next_usize(&mut self) -> usize { self.next_u64() as usize }
 }
 
+#[allow(dead_code)]
 struct XorDsu {
     p: Vec<usize>,
     x: Vec<u8>,
     sz: Vec<usize>,
 }
+#[allow(dead_code)]
 impl XorDsu {
     fn new(n: usize) -> Self {
         let mut p = vec![0; n];
@@ -79,6 +83,7 @@ impl XorDsu {
     }
 }
 
+#[allow(dead_code)]
 fn main() {
     let mut sc = Scanner::new();
     let n = sc.next_usize();

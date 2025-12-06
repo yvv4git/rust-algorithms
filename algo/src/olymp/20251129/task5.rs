@@ -13,58 +13,58 @@ fn test_task5() {
     let mut it = input.split_whitespace();
 
     let n: usize = it.next().unwrap().parse().unwrap();
-    let v: f64 = it.next().unwrap().parse::<u64>().unwrap() as f64;
+    let vel: f64 = it.next().unwrap().parse::<u64>().unwrap() as f64;
 
-    let mut t = Vec::with_capacity(n);
+    let mut times = Vec::with_capacity(n);
     let mut g = Vec::with_capacity(n);
 
     for _ in 0..n {
         let ti = it.next().unwrap().parse::<u64>().unwrap() as f64;
         let gi = it.next().unwrap().parse::<u64>().unwrap() as f64;
-        t.push(ti);
+        times.push(ti);
         g.push(gi);
     }
 
     // виртуальные требования
-    let mut s: Vec<f64> = g.iter().map(|&x| x / v).collect();
+    let s: Vec<f64> = g.iter().map(|&x| x / vel).collect();
 
     let mut ans = vec![0.0_f64; n];
 
     // очередь активных работ: (вирт. дедлайн, id)
     let mut heap = BinaryHeap::<Reverse<(OrderedFloat<f64>, usize)>>::new();
 
-    let mut V = 0.0_f64;
-    let mut T = 0.0_f64;
+    let mut v = 0.0_f64;
+    let mut t = 0.0_f64;
     let mut k = 0_usize;
     let mut idx = 0_usize;
 
     while idx < n || k > 0 {
-        let next_arrival = if idx < n { t[idx] } else { f64::INFINITY };
+        let next_arrival = if idx < n { times[idx] } else { f64::INFINITY };
 
         let next_completion = if k > 0 {
             let &Reverse((d, _)) = heap.peek().unwrap();
             let d = d.0; // извлекаем f64
-            T + (d - V) * (k as f64)
+            t + (d - v) * (k as f64)
         } else {
             f64::INFINITY
         };
 
         if next_arrival <= next_completion {
             if k > 0 {
-                V += (next_arrival - T) / (k as f64);
+                v += (next_arrival - t) / (k as f64);
             }
-            T = next_arrival;
+            t = next_arrival;
 
-            let d = V + s[idx];
+            let d = v + s[idx];
             heap.push(Reverse((OrderedFloat(d), idx)));
             k += 1;
             idx += 1;
         } else {
             let Reverse((d, id)) = heap.pop().unwrap();
             let d = d.0;
-            T = next_completion;
-            V = d;
-            ans[id] = T;
+            t = next_completion;
+            v = d;
+            ans[id] = t;
             k -= 1;
         }
     }

@@ -13,6 +13,7 @@ fn count_two_sum(n: i128, k: i128) -> i128 {
 }
 
 
+#[allow(dead_code)]
 fn main() {
     // Считываем n и k
     let mut s = String::new();

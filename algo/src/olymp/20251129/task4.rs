@@ -1,5 +1,6 @@
 use std::io::{self, Read};
 
+#[allow(dead_code)]
 fn main() {
     // Чтение входа
     let mut s = String::new();
